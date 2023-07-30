@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "formulahendry.auto-rename-tag",
+    "lokalise.i18n-ally",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "gruntfuggly.todo-tree",
+    "pmneo.tsimporter"
+  ]
+}

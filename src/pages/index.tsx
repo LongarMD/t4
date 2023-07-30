@@ -3,8 +3,20 @@ import Head from "next/head";
 import Link from "next/link";
 import { api } from "@/utils/api";
 
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "react-i18next";
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale)),
+    },
+  };
+}
+
 export default function Home() {
-  const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  const { t } = useTranslation();
+  const hello = api.example.hello.useQuery({ text: t("from_tRPC") });
 
   return (
     <>
@@ -59,7 +71,7 @@ function AuthShowcase() {
 
   const { data: secretMessage } = api.example.getSecretMessage.useQuery(
     undefined, // no input
-    { enabled: sessionData?.user !== undefined }
+    { enabled: sessionData?.user !== undefined },
   );
 
   return (

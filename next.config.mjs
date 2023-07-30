@@ -3,21 +3,19 @@
  * for Docker builds.
  */
 await import("./src/env.mjs");
+import config from "./next-i18next.config.js";
 
-/** @type {import("next").NextConfig} */
-const config = {
+/**
+ * @template {import('next').NextConfig} T
+ * @param {T} config - A generic parameter that flows through to the return type
+ * @constraint {{import('next').NextConfig}}
+ */
+function defineNextConfig(config) {
+  return config;
+}
+
+export default defineNextConfig({
   reactStrictMode: true,
-
-  /**
-   * If you have `experimental: { appDir: true }` set, then you must comment the below `i18n` config
-   * out.
-   *
-   * @see https://github.com/vercel/next.js/issues/41980
-   */
-  i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
-  },
-};
-
-export default config;
+  swcMinify: true,
+  i18n: config.i18n,
+});

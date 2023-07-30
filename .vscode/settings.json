@@ -1,7 +1,17 @@
 {
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
-    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, next.config.mjs, postcss.config.cjs, prettier.config.cjs, tailwind.config.ts, tsconfig.json, .gitignore, next-env.d.ts",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, next.config.mjs, postcss.config.cjs, prettier.config.cjs, tailwind.config.ts, tsconfig.json, .gitignore, next-env.d.ts, next-i18next.config.js",
     ".env.example": ".env, .env.development"
-  }
+  },
+  "files.exclude": {
+    "**/.next": true,
+    "next-env.d.ts": true,
+    "pnpm-lock.yaml": true
+  },
+  "i18n-ally.localesPaths": [
+    "./locales",
+    "public/locales"
+  ],
+  "i18n-ally.keystyle": "nested"
 }
