@@ -1,9 +1,15 @@
-import { appWithTranslation } from "next-i18next";
-import { type Session } from "next-auth";
-import { SessionProvider } from "next-auth/react";
-import { type AppType } from "next/app";
-import { api } from "@/lib/api";
 import "@/styles/globals.css";
+
+import { type Session } from "next-auth";
+import { type AppType } from "next/app";
+import { appWithTranslation } from "next-i18next";
+import { SessionProvider } from "next-auth/react";
+import { api } from "@/lib/api";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin-ext"],
+});
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -11,7 +17,9 @@ const MyApp: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
+      <main className={inter.className}>
+        <Component {...pageProps} />
+      </main>
     </SessionProvider>
   );
 };
