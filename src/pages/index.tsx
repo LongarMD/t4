@@ -4,8 +4,8 @@ import Link from "next/link";
 import { api } from "@/utils/api";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "next-i18next";
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
