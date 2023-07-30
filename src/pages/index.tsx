@@ -5,6 +5,7 @@ import { api } from "@/utils/api";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "react-i18next";
+import { Button } from "@/components/ui/button";
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
@@ -80,12 +81,12 @@ function AuthShowcase() {
         {sessionData && <span>Logged in as {sessionData.user?.name}</span>}
         {secretMessage && <span> - {secretMessage}</span>}
       </p>
-      <button
-        className="rounded-full bg-white/10 px-10 py-3 font-semibold text-white no-underline transition hover:bg-white/20"
+      <Button
+        variant={sessionData ? "destructive" : "secondary"}
         onClick={sessionData ? () => void signOut() : () => void signIn()}
       >
         {sessionData ? "Sign out" : "Sign in"}
-      </button>
+      </Button>
     </div>
   );
 }

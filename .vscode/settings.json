@@ -1,7 +1,7 @@
 {
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
-    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, next.config.mjs, postcss.config.cjs, prettier.config.cjs, tailwind.config.ts, tsconfig.json, .gitignore, next-env.d.ts, next-i18next.config.js",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, next.config.mjs, postcss.config.cjs, prettier.config.cjs, tailwind.config.ts, tsconfig.json, .gitignore, next-env.d.ts, next-i18next.config.js, components.json",
     ".env.example": ".env, .env.development"
   },
   "files.exclude": {
